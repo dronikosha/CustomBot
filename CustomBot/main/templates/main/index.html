@@ -1,0 +1,191 @@
+
+{% extends 'main/base.html' %}
+
+{% block title %} 
+Главная
+{% endblock %}
+
+
+{% block content %}
+
+<style>
+
+  :root {
+    --surface-color: #fff;
+    --curve: 40;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #fef8f8;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .card {
+    position: relative;
+    display: block;
+    height: 100%;  
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+  }
+  
+  .card__image {      
+    width: 100%;
+    height: auto;
+  }
+  
+  .card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;      
+    border-radius: calc(var(--curve) * 1px);    
+    background-color: var(--surface-color);      
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+  }
+  
+  .card:hover .card__overlay {
+    transform: translateY(0);
+  }
+  
+  .card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;    
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+  }
+  
+  .card__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;      
+    z-index: 1;
+  }
+  
+  .card__arc path {
+    fill: var(--surface-color);
+    d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+  }       
+  
+  .card:hover .card__header {
+    transform: translateY(0);
+  }
+  
+  .card__thumb {
+    flex-shrink: 0;
+    width: 60px !important;
+    height: 60px !important;      
+    {% comment %} border-radius: 50%; {% endcomment %}
+  }
+  
+  .card__title {
+    font-size: 1em;
+    margin: 0 0 .3em;
+    color: #6A515E;
+  }
+  
+  .card__tagline {
+    display: block;
+    margin: 1em 0;
+    font-family: "MockFlowFont";  
+    font-size: .8em; 
+    color: #D7BDCA;  
+  }
+  
+  .card__status {
+    font-size: .8em;
+    color: #D7BDCA;
+  }
+  
+  .card__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #D7BDCA;
+    font-family: "MockFlowFont";   
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+</style>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Цены</h1>
+    <p class="lead">Здесь написана небольшая информация о бот-сервисе,<br> работы, которые можем создавать и так далее.<br> Больше мне писать нечего, потом придумаем</p>
+</div>
+
+
+<ul class="cards">
+  <li>
+    <a href="" class="card">
+      <img src="https://i.imgur.com/lQZHRoW.jpg" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+          <img class="card__thumb" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="" />
+          <div class="card__header-text">
+            <h3 class="card__title">Telegram bot</h3>            
+            <span class="card__status">от 4000 рублей</span>
+          </div>
+        </div>
+        <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+      </div>
+    </a>      
+  </li>
+  <li>
+    <a href="" class="card">
+      <img src="https://i.imgur.com/lQZHRoW.jpg" class="card__image" alt="" />
+      <div class="card__overlay">        
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+          <img class="card__thumb" src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" alt=""  />
+          <div class="card__header-text">
+            <h3 class="card__title">Вконтакте бот</h3>
+            <span class="card__status">от 3000 рублей</span>
+          </div>
+        </div>
+        <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+      </div>
+    </a>
+  </li>
+    <a href="" class="card">
+      <img src="https://i.imgur.com/lQZHRoW.jpg" class="card__image" alt="" />
+      <div class="card__overlay">
+        <div class="card__header">
+          <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+          <img class="card__thumb" src="https://svgshare.com/i/jA7.svg" alt="" />
+          <div class="card__header-text">
+            <h3 class="card__title">Discord бот</h3>
+            <span class="card__status">от 3000 рублей<span>
+          </div>
+        </div>
+        <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+      </div>
+    </a>
+  </li>    
+</ul>
+
+{% endblock %}
