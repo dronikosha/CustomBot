@@ -1,0 +1,361 @@
+body {
+    width: 100%;
+    overflow-y: auto;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header {
+    /*background-color: #F1EFFA;*/
+    background: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(5px);
+    z-index: 99;
+    padding: 10px 0;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+footer {
+    background-color: #F7F5FF;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 0;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+header .logo {
+    max-width: 100%;
+    display: block;
+}
+
+header .mnu_top {
+    list-style-type: none;
+}
+
+header .mnu_top li {
+    display: inline-block;
+    margin-right: 40px;
+}
+
+header .mnu_top li a {
+    /*margin-bottom: -15px;*/
+    margin-top: 5px;
+    display: block;
+    text-decoration: none;
+    font-family: Ubuntu-Light, serif;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    -o-transition: color .4s ease-in-out;
+    -webkit-transition: color .4s ease-in-out;
+    transition: color .4s ease-in-out;
+}
+
+header .mnu_top li a:hover {
+    color: #1E90FF
+}
+
+.hero {
+    z-index: 2;
+    width: 100%;
+    padding-top: 100px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #F7F5FF;
+}
+
+.second {
+    display: flex;
+    z-index: 2;
+    width: 100%;
+    min-height: 100vh;
+    padding: 120px 0;
+    background-color: #F7F5FF;
+}
+
+.about--us {
+    display: flex;
+    z-index: 2;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 0;
+    background-color: #F7F5FF;
+}
+
+.panorama_top {
+    width: 100%;
+    z-index: -1;
+    background-image: url("../img/panorama_top.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 150px 0;
+    filter: blur(2px);
+}
+
+.panorama_bottom {
+    width: 100%;
+    z-index: -1;
+    background-image: url("../img/panorama_bottom.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 150px 0;
+    filter: blur(2px);
+}
+
+.back_panorama img {
+    width: 100%;
+}
+
+.btn {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+}
+
+.btn >a {
+    border-radius: 10px;
+    text-decoration: none;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn .btn_buy {
+    margin-top: 5px;
+    text-align: center;
+    /*margin-bottom: 12px;*/
+    font-size: 18px;
+    font-family: Ubuntu-Medium, serif;
+    color: #fff;
+    font-weight: 400;
+    padding: 10px 24px;
+    background-color: #1E90FF;
+}
+
+.btn .btn_buy:hover {
+    background-color: #0081FF;
+}
+
+.btn .btn_vk {
+    border: 1px solid #1E90FF;
+    font-size: 18px;
+    font-family: Ubuntu-Medium, serif;
+    color: #1E90FF;
+    font-weight: 500;
+    padding: 9px 24px;
+    background-color: transparent;
+}
+
+.btn .btn_vk:hover {
+    background-color: #1E90FF;
+    color: white;
+}
+
+header .right_header {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+/*Description*/
+
+.description {
+    margin-top: 120px;
+}
+
+.description h1 {
+    margin: 0;
+    font-size: 50px;
+    color: #0081FF;
+    font-family: Ubuntu-Bold, serif;
+}
+
+.description p {
+    font-size: 25px;
+    color: #3F3E3E;
+    font-family: Ubuntu-Light, serif;
+}
+
+/*Information / About Us*/
+
+.information_about {
+    text-align: -webkit-left;
+    margin-top: 120px;
+}
+
+.information_about h1 {
+    margin: 0;
+    font-size: 50px;
+    color: #0081FF;
+    font-family: Ubuntu-Bold, serif;
+}
+
+.information_about p {
+    font-size: 25px;
+    color: #3F3E3E;
+    font-family: Ubuntu-Light, serif;
+}
+
+.information_about ol {
+    list-style: none;
+    counter-reset: li
+}
+
+.information_about li {
+    line-height: 1.5;
+    font-size: 25px;
+    color: #3F3E3E;
+    font-family: Ubuntu-Light, serif;
+    counter-increment: li
+}
+
+.information_about li::before {
+    content: counter(li);
+    font-size: 25px;
+    font-family: Ubuntu-Medium, serif;
+    color: #0081FF;
+    display: inline-block;
+    width: 1em;
+    margin-left: -2em; /* Если сдвигать - то это*/
+    margin-right: 0.5em;
+    text-align: right;
+    direction: rtl
+}
+
+/*Products*/
+
+.products {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.products h1 {
+    margin: 0;
+    font-size: 50px;
+    color: #0081FF;
+    font-family: Ubuntu-Bold, serif;
+}
+
+.products p {
+    font-size: 25px;
+    color: #3F3E3E;
+    font-family: Ubuntu-Light, serif;
+}
+
+/*Footer*/
+.footer--text {
+    font-size: 18px;
+    font-family: Ubuntu-Medium, serif;
+    color: #7A7A7A;
+}
+
+.footer--menu {
+    font-size: 20px;
+    font-family: Ubuntu-Medium, serif;
+    color: #7A7A7A;
+}
+
+.footer--menu >i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.footer--cop {
+    text-align: center;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    font-size: 15px;
+    font-family: Ubuntu-Light, serif;
+    color: #7A7A7A;
+}
+
+.doc--href {
+    -o-transition: color .4s ease-in-out;
+    -webkit-transition: color .4s ease-in-out;
+    transition: color .4s ease-in-out;
+    text-decoration: none;
+
+    font-size: 18px;
+    font-family: Ubuntu-Medium, serif;
+    color: #7A7A7A;
+}
+
+.doc--href >i {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.doc--href:hover {
+    color: #94C7F9;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+footer li a {
+    display: flex;
+    text-decoration: none;
+    font-family: Ubuntu-Light, serif;
+    color: #7A7A7A;
+    font-size: 18px;
+    font-weight: 600;
+    -o-transition: color .4s ease-in-out;
+    -webkit-transition: color .4s ease-in-out;
+    transition: color .4s ease-in-out;
+    margin-bottom: 5px;
+}
+
+footer li a:hover {
+    color: #94C7F9;
+}
+
+.social {
+    color: #7A7A7A;
+}
+
+.social i {
+    font-size: 24px;
+}
+
+.first_page_screen {
+    align-items: center;
+    align-content: center;
+}
+
+.first_page_screen p {
+    text-align: right;
+}
+
+
+
