@@ -4,6 +4,7 @@
     overflow: hidden;
     border-radius: 40px;
     padding-bottom: 40px;
+    margin-top: 10px;
 }
 
 .card__image {
@@ -56,7 +57,7 @@
 
 .card__description {
     font-family: Ubuntu-Light, sans-serif;
-    padding: 0 30px;
+    padding: 0 10px;
     color: #000;
     max-height: 0px;
     opacity: 0;
@@ -64,7 +65,7 @@
     transition: .2s;
 }
 .card__content:hover .card__description {
-    padding: 30px;
+    padding: 20px;
     padding-top: 0;
     opacity: 1;
     max-height: 500px;
