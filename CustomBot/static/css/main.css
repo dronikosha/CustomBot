@@ -6,7 +6,6 @@ body {
 }
 
 header {
-    /*background-color: #F1EFFA;*/
     background: rgba(255, 255, 255, .5);
     backdrop-filter: blur(5px);
     z-index: 99;
@@ -96,16 +95,61 @@ header .mnu_top li a:hover {
     min-height: 100vh;
     padding: 100px 0;
     background-color: #F7F5FF;
+    margin-top: 100px;
 }
 
-.panorama_top {
+.about--us i {
+    font-size: 150px;
+    color: #0081FF;
+}
+
+.background .image-info {
+    align-items: center;
+    text-align: center;
+}
+
+.info_space {
+    margin-bottom: 50px;
+    align-content: center;
+}
+
+.background-filter::after {
+    -webkit-backdrop-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+    backdrop-filter: blur(4px);
+
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0;
+}
+
+.background-filter {
+    position: relative;
+}
+
+.background {
     width: 100%;
-    z-index: -1;
-    background-image: url("../img/panorama_top.jpg");
+    background-image: url("../img/space.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding: 150px 0;
-    filter: blur(2px);
+    background-blend-mode: screen ;
+    padding: 70px 0;
+}
+
+
+.u-non-blurred {
+    position: relative;
+    z-index: 1;
+}
+
+.background i {
+    padding-top: 20px;
+    font-size: 220px;
+    text-align: center;
+    color: white;
 }
 
 .panorama_bottom {
@@ -199,21 +243,16 @@ header .right_header {
 
 /*Information / About Us*/
 
-.information_about {
-    text-align: -webkit-left;
-    margin-top: 120px;
-}
-
 .information_about h1 {
     margin: 0;
     font-size: 50px;
-    color: #0081FF;
+    color: #F7F5FF;
     font-family: Ubuntu-Bold, serif;
 }
 
 .information_about p {
     font-size: 25px;
-    color: #3F3E3E;
+    color: #dddddd;
     font-family: Ubuntu-Light, serif;
 }
 
@@ -225,7 +264,7 @@ header .right_header {
 .information_about li {
     line-height: 1.5;
     font-size: 25px;
-    color: #3F3E3E;
+    color: #ddd;
     font-family: Ubuntu-Light, serif;
     counter-increment: li
 }
@@ -234,7 +273,7 @@ header .right_header {
     content: counter(li);
     font-size: 25px;
     font-family: Ubuntu-Medium, serif;
-    color: #0081FF;
+    color: #fff;
     display: inline-block;
     width: 1em;
     margin-left: -2em; /* Если сдвигать - то это*/
@@ -245,13 +284,17 @@ header .right_header {
 
 /*Products*/
 
+.low--cost {
+    font-size: 16px !important;
+}
+
 .products {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 0;
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 
 .products h1 {

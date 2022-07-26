@@ -6,9 +6,11 @@
     <title>CustomBot</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-v4-grid-only@1.0.0/dist/bootstrap-grid.min.css">
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css/product_card.css' %}">
-    <script src="{% static ' scripts/scrolling.js' %}"></script>
+    <link rel="stylesheet" href=" {% static 'css/main.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/product_card.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/alerts_bootstrap/css/bootstrap-theme.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/alerts_bootstrap/css/bootstrap.css' %}">
+    <script src="{% static 'scripts/scrolling.js' %}"></script>
     <script src="https://kit.fontawesome.com/b6d6030303.js" crossorigin="anonymous"></script>
 </head>
 <body bgcolor="#F7F5FF">
@@ -16,7 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-xl-3">
-                    <a href="" class="logo"><img src="{% static 'img/logo.svg' %}" alt=""></a>
+                    <a href="" class="logo"><img src=" {% static 'img/logo.svg' %}" alt=""></a>
                 </div>
                 <div class="col-12 col-xl-9">
                     <div class="right_header">
@@ -42,7 +44,8 @@
                         <h1>Кто мы такие?</h1>
                         <p>CustomBot - это команда программистов, которые в кратчайшие выполнит любую, поставленную Вами задачу.</p>
                         <p>Чат-боты сейчас являются универсальным инструментом в каждом мессенджере.
-                            Можно не просто создать личного бота-помощника, но и целый магазин в простом мессенджере!</p>
+                            Мы не просто помогаем автоматизировать сервис, мы создаем ботов, которые
+                            способствуют продвижению Вашего бизнеса!</p>
                         <div class="btn">
                             <a href="https://vk.com/custom_bot" target="_blank" class="btn_vk">Мы в Вконтакте</a>
                         </div>
@@ -57,11 +60,32 @@
         </div>
     </section>
 
-    <section class="panorama_top">
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div {% if message.tags %} class="alert alert-sm alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+    <section class="background background-filter" id="about_us">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-xl-12">
-
+                <div class="col-12 col-xl-6">
+                    <p class="u-non-blurred image-info"><i class="fa-solid fa-circle-question"></i></p>
+                </div>
+                <div class="col-12 col-xl-6">
+                    <div class="u-non-blurred information_about">
+                        <h1>Почему именно мы?</h1>
+                        <ol>
+                            <li>Мы не просим с Вас предоплату</li>
+                            <li>Вы оплачиваете работу только после проверки</li>
+                            <li>Мы даем гарантию на своих ботов на 3 месяца</li>
+                            <li>В подарок к заказу мы даем месяц бесплатного хостинга</li>
+                        </ol>
+                        <p class="low--cost">* предоплата в размере 10% требуется на заказы от 20.000р</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,9 +97,11 @@
                 <div class="col-12 col-xl-12">
                     <div class="products">
                         <h1>Наши услуги</h1>
-                        <p>Здесь написана небольшая информация о бот-сервисе,<br>
-                            работы, которые можем создавать и так далее.<br>
-                            Больше мне писать нечего, потом придумаем</p>
+                        <p>Здесь мы постарались отобразить Вам самые популярные наши услуги.<br>
+                            Но это не означает, что наши возможности на этом заканчиваются. <br>
+                            Мы с огромным удовольствием ознакомимся с Вашей задумкой<br>
+                            и предложим идеии по ее реализации</p>
+
                     </div>
                 </div>
             </div>
@@ -90,15 +116,14 @@
                                     </div>
                                     <div class="card__content">
                                         <div class="card__info">
-                                            <img class="card__thumb" src="{% static 'img/social/VK.svg' %}" alt />
+                                            <img class="card__thumb" src=" {% static 'img/social/VK.svg' %}" alt />
                                             <div class="card__text">
                                                 <h3>Бот в Вконтакте</h3>
                                                 <span>от 3000 рублей</span>
                                             </div>
                                         </div>
                                         <div class="card__description">
-                                            <p>Разработаем бота с абсолютно любым функционалом, любой сложности.
-                                                Чтобы узнать подробности по своей задумке обращайтесь к нам в личные сообщения!</p>
+                                            <p>Реализуем любую Вашу задумку в чат-бота.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +135,7 @@
                                     </div>
                                     <div class="card__content">
                                         <div class="card__info">
-                                            <img class="card__thumb" src="{% static 'img/social/Telegram.svg' %}" alt />
+                                            <img class="card__thumb" src=" {% static 'img/social/Telegram.svg' %}" alt />
                                             <div class="card__text">
                                                 <h3>Бот в Telegram</h3>
                                                 <span>от 3000 рублей</span>
@@ -129,7 +154,7 @@
                                     </div>
                                     <div class="card__content">
                                         <div class="card__info">
-                                            <img class="card__thumb" src="{% static 'img/social/Discord.svg' %}" alt />
+                                            <img class="card__thumb" src=" {% static 'img/social/Discord.svg' %}" alt />
                                             <div class="card__text">
                                                 <h3>Бот в Discord</h3>
                                                 <span>от 3000 рублей</span>
@@ -148,7 +173,7 @@
                                     </div>
                                     <div class="card__content">
                                         <div class="card__info">
-                                            <img class="card__thumb" src="{% static 'img/Bot.svg' %}" alt />
+                                            <img class="card__thumb" src=" {% static 'img/social/Bot.svg' %}" alt />
                                             <div class="card__text">
                                                 <h3>Бот-сервис</h3>
                                                 <span>от 3000 рублей</span>
@@ -167,40 +192,55 @@
         </div>
     </section>
 
-    <section class="panorama_bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-xl-12">
-                </div>
-            </div>
-        </div>
-    </section>
+<!--    <section class="panorama_bottom">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-12 col-xl-12">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
 
-    <section class="about--us" id="about_us">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-xl-6">
-                    <div class="information_about">
-                        <h1>Как мы работаем</h1>
-                        <p>Методика нашей работы очень проста:</p>
-                        <ol>
-                            <li>Вы нам деньги</li>
-                            <li>Мы Вам проект</li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="col-12 col-xl-6">
-                    <p><img src="{% static 'img/macbook.png' %}" alt /></p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!--    <section class="about&#45;&#45;us" id="about_us">-->
+<!--        <div class="container">-->
+<!--            <div class="row info_space">-->
+<!--                <div class="col-12 col-xl-6">-->
+<!--                    <p class="image-info"><i class="fa-solid fa-briefcase"></i></p>-->
+<!--                </div>-->
+<!--                <div class="col-12 col-xl-6">-->
+<!--                    <div class="information_about">-->
+<!--                        <h1>Как мы работаем</h1>-->
+<!--                        <p>Методика нашей работы очень проста:</p>-->
+<!--                        <ol>-->
+<!--                            <li>Вы нам деньги</li>-->
+<!--                            <li>Мы Вам проект</li>-->
+<!--                        </ol>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row info_space">-->
+<!--                <div class="col-12 col-xl-6">-->
+<!--                    <div class="information_about">-->
+<!--                        <h1>Частые вопросы</h1>-->
+<!--                        <p>Методика нашей работы очень проста:</p>-->
+<!--                        <ol>-->
+<!--                            <li>Вы нам деньги</li>-->
+<!--                            <li>Мы Вам проект</li>-->
+<!--                        </ol>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-12 col-xl-6">-->
+<!--                    <p class="image-info"><i class="fa-solid fa-circle-question"></i></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
 
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-12 col-xl-3">
-                    <img src="{% static 'img/footer_logo.svg' %}" alt="">
+                    <img src=" {% static 'img/footer_logo.svg' %}" alt="">
                     <p class="footer--text">Разработка ботов и не только</p>
                 </div>
                 <div class="col-12 col-xl-4">
@@ -208,7 +248,7 @@
                     <ul>
                         <li><a href="#">О нас</a></li>
                         <li><a href="#">Услуги</a></li>
-                        <li><a href="{% url 'contact' %}">Оставить заявку</a></li>
+                        <li><a href="#">Оставить заявку</a></li>
                         <li><a href="https://vk.com/custom_bot" target="_blank">Мы в Вконтакте</a></li>
                     </ul>
                 </div>
@@ -222,7 +262,7 @@
                         <li class="social"><a href="https://vk.com/custom_bot" target="_blank"><i class="fa-brands fa-vk"></i></a></li>
                         <li class="social"><a href="#"><i class="fa-brands fa-telegram"></i></a></li>
                         <li class="social"><a href="#"><i class="fa-solid fa-at"></i></a></li>
-                        <li class="social"><a href="{% url 'contact' %}"><i class="fa-solid fa-envelope"></i></a></li>
+                        <li class="social"><a href="contact.html"><i class="fa-solid fa-envelope"></i></a></li>
                     </ul>
                 </div>
             </div>
