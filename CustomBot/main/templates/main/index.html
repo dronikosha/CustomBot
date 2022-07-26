@@ -23,7 +23,7 @@
                 <div class="col-12 col-xl-9">
                     <div class="right_header">
                         <ul class="mnu_top">
-                            <li><a href="#">Главная</a></li>
+                            <li><a href="{% url 'home' %}">Главная</a></li>
                             <li><a href="#about_us">Информация</a></li>
                             <li><a href="#costs">Цены</a></li>
                         </ul>
@@ -64,12 +64,10 @@
                         <p><img src="{% static 'img/start_icon.png' %}"  alt=""/></p>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
-
-
+    
 
     <section class="background background-filter" id="about_us">
         <div class="container">

@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirec
 from django.urls import reverse_lazy
 import requests
 from environs import Env
-import re
 from django.contrib import messages
 
 env = Env()
@@ -16,25 +15,21 @@ def index(request):
 
 
 def contact(request):
-    # Dima's vk id above
-    data = {"access_token": env.str("VK_BOT_KEY"), "user_id": 146653997, "message": "Это тебе написал бот с сайта. Дима лох", "v": "5.131", "random_id": 0}
     if request.method == "POST":
         name = request.POST["name"]
         email = request.POST["email"]
         bot = request.POST["select_bot"]
         message = request.POST["message"]
         if(email and name and bot and message):
-            context = {'message': 'Ваше сообщение было отправлено, спасибо за доверие!', 'tag': 'danger'}
+            message = f"Имя: {name}\nСвязь: {email}\nСоц. сеть: {bot}\nЗадание:\n {message}"
+            data_nikita = {"access_token": env.str("VK_BOT_KEY"), "user_id": 201252666, "message": message, "v": "5.131", "random_id": 0} # Никита
+            data_dima = {"access_token": env.str("VK_BOT_KEY"), "user_id": 146653997, "message": message, "v": "5.131", "random_id": 0} # Дима
+            r = requests.post("https://api.vk.com/method/messages.send", data=data_nikita)
+            r = requests.post("https://api.vk.com/method/messages.send", data=data_dima)
+            print(r.reason)
             messages.success(request, "Ваше сообщение было отправлено, спасибо за доверие!")
             return HttpResponseRedirect(reverse_lazy('home'))
-            messages.success(request, "Ваше сообщение было отправлено, спасибо за доверие!")
-            return HttpResponseRedirect(reverse_lazy('contact'))
         else:
-            print("Заполните все поля")
             messages.error(request, "Заполните все поля")
             return HttpResponseRedirect(reverse_lazy('contact'))
-        print(name, email, bot, message)
-        # r = requests.post("https://api.vk.com/method/messages.send", data=data)
-        # print(r.status_code, r.reason)
-        return redirect("home")
     return render(request, 'main/contact.html')
