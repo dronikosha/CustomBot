@@ -23,7 +23,7 @@
                 <div class="col-12 col-xl-9">
                     <div class="right_header">
                         <ul class="mnu_top">
-                            <li><a href="{% url 'home' %}">Главная</a></li>
+                            <li><a href="#home">Главная</a></li>
                             <li><a href="#about_us">Информация</a></li>
                             <li><a href="#costs">Цены</a></li>
                         </ul>
@@ -36,7 +36,7 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-xl-6">
@@ -283,6 +283,14 @@
             $('.messages').fadeOut('slow');
         }, 1000); // <-- time in milliseconds, 1000 =  1 sec
     });
+
+    $('a[href^=\\#]').on('click', function(event){     
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+    });
+
 </script>
+
+
 
 </html>
