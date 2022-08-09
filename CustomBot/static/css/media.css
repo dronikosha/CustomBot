@@ -1,0 +1,29 @@
+@media screen and (max-width: 992px) {
+    .hero {
+        padding-top: 30px;
+        min-height: inherit;
+    }
+
+    .second {
+        min-height: inherit;
+    }
+
+    .image-info {
+        padding-bottom: 20px;
+    }
+
+    .right_header ul {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero img {
+        max-width: 70%;
+    }
+
+    .first_page_screen p {
+        text-align: center;
+    }
+}
+
