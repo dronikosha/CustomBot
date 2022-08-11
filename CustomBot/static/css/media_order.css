@@ -1,0 +1,11 @@
+@media screen and (max-width: 992px) {
+    .container {
+        width: 100%;
+        min-height: inherit;
+    }
+
+    .right_header .close i {
+        font-size: 45px;
+    }
+
+}
