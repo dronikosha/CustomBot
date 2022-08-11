@@ -29,6 +29,10 @@
     header {
         padding: 13px 0;
     }
+
+    footer .footer--col {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
